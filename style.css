@@ -1,0 +1,196 @@
+:root {
+  --text: #222;
+  --muted: #666;
+  --accent: #4b2e83; /* UW purple */
+  --border: #e5e5e5;
+  --bg: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, "Segoe UI", "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 64px 24px 40px;
+}
+
+/* Header / profile */
+.profile {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 32px;
+  align-items: flex-start;
+  margin-bottom: 56px;
+}
+
+.avatar {
+  flex: 0 0 200px;
+  width: 200px;
+  /* Line up with the first .bio paragraph: h1 (30px × 1.6 + 6px) + 2 × affiliation (15px × 1.6 + 2px) + .bio top margin */
+  margin-top: 120px;
+}
+
+.avatar img {
+  width: 200px;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+.profile-text h1 {
+  font-size: 30px;
+  margin: 0 0 6px;
+  font-weight: 700;
+}
+
+.name-zh {
+  font-family: KaiTi, "Kaiti SC", STKaiti, serif;
+  line-height: 1; /* keep the h1 line height unchanged so the photo stays aligned with .bio */
+  font-weight: 400;
+  color: #333;
+  /* KaiTi has no bold; a hairline stroke gives a weight between regular and faux-bold */
+  -webkit-text-stroke: 0.4px currentColor;
+  margin-left: 6px;
+}
+
+.affiliation {
+  margin: 0 0 2px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.bio {
+  margin: 16px 0;
+  font-size: 15px;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Sections */
+section {
+  margin-bottom: 44px;
+}
+
+h2 {
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+  margin-bottom: 18px;
+  color: var(--text);
+}
+
+/* News */
+.news-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.news-list li {
+  font-size: 14.5px;
+  padding: 6px 0;
+  padding-left: 104px;
+  text-indent: -104px;
+}
+
+.news-list .date {
+  display: inline-block;
+  width: 96px;
+  margin-right: 8px;
+  text-indent: 0;
+  color: var(--muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Research / publications */
+.pub-item {
+  padding: 12px 0;
+}
+
+.pub-thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 14px;
+  object-fit: contain;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: zoom-in;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  z-index: 1000;
+  cursor: zoom-out;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 4px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+.pub-info {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.pub-title {
+  font-weight: 600;
+  margin: 0 0 4px;
+  font-size: 15px;
+}
+
+.pub-venue {
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--accent);
+}
+
+.pub-desc {
+  margin: 0;
+  font-size: 14px;
+  color: #444;
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+  .profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .avatar { margin-top: 0; }
+}

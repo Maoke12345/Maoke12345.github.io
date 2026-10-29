@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yiguang Cai — Personal Homepage</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <header class="profile">
+    <div class="avatar">
+      <img src="assets/img/profile.jpg" alt="Photo of Yiguang (Eric) Cai">
+    </div>
+
+    <div class="profile-text">
+      <h1>Yiguang (Eric) Cai</h1>
+      <p class="affiliation">Student, University of Washington</p>
+      <p class="affiliation">Researcher, <a href="https://furong-huang.com/" target="_blank">Furong Lab</a></p>
+
+      <p class="bio">
+        I am a sophomore at the University of Washington.
+        I currently do research in the <a href="https://furong-huang.com/" target="_blank">Furong Lab</a>,
+        working on <strong>harness optimization</strong> for LLM agents.
+        My current project, <em><a href="https://www.alphaxiv.org/abs/2610.meta2-online-harness-evolution" target="_blank">"Meta²: Precomputing Reusable Knowledge for Online Harness Evolution in Long-Horizon Agents,"</a></em>
+        is under review.
+      </p>
+
+      <p class="bio">
+        I am open to research collaborations. If you are interested in working together, please feel free to reach out via <a href="mailto:maoke@uw.edu">email</a>.
+      </p>
+    </div>
+  </header>
+
+  <section>
+    <h2>News</h2>
+    <ul class="news-list">
+      <li><span class="date">May 2026</span>Started research in the Furong Lab at the University of Maryland.</li>
+      <li><span class="date">Sept 2025</span>Started undergraduate studies at the University of Washington.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Research</h2>
+    <div class="pub-item">
+      <div class="pub-info">
+        <p class="pub-title"><a href="https://www.alphaxiv.org/abs/2610.meta2-online-harness-evolution" target="_blank">Meta²: Precomputing Reusable Knowledge for Online Harness Evolution in Long-Horizon Agents</a></p>
+      </div>
+
+      <img class="pub-thumb" src="assets/img/meta2-figure.jpg" alt="Implementation flow for offline Meta-Skill learning and online harness evolution" onclick="openLightbox(this.src, this.alt)">
+    </div>
+  </section>
+
+</div>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+function openLightbox(src, alt) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox-img').alt = alt;
+  document.getElementById('lightbox').classList.add('active');
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
+</script>
+
+</body>
+</html>
