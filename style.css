@@ -172,6 +172,12 @@ h2 {
   font-size: 15px;
 }
 
+.pub-authors {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
 .pub-venue {
   margin: 0 0 6px;
   font-size: 13px;
