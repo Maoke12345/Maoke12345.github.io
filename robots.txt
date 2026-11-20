@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://maoke12345.github.io/sitemap.xml
